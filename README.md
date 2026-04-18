@@ -6,7 +6,7 @@ Goal of this project is it to use the BTT SFS v2 or any other filament motion / 
 
  - BTT SFS v2
  - RP2040-Zero (Refered to as RPi rest of the guide)
- - Centauri Carbon running Cosmos (at time of wrting beta 0.4)
+ - Centauri Carbon running Cosmos (at time of writing beta 0.4)
  - USB-A to USB-C data supporting wire
  - Soldering equipment
 
@@ -55,7 +55,7 @@ Please check your port what pins are mapped to what GPIO (e.g. GP2 -> Pin 2, GP3
 
 I recommend wiring two female JST 3pin connectors. They fit to the cable that was included in my sfs.
 
-Finally connact the RPi to the SFS and the Pico via USB to the front port of the Centauri.
+Finally connect the RPi to the SFS and the Pico via USB to the front port of the Centauri.
 
 ![Messy Wires](./messy_wires.jpg)
 
@@ -64,7 +64,7 @@ Finally connact the RPi to the SFS and the Pico via USB to the front port of the
 SSH into the printer and run `ls /dev/serial/by-id`:
 ```
 root@elegoo-centauri-carbon1: ls /dev/serial/by-id/
-usb-Klipper_rp2040_5054316568A22D1C-if00               usb-Klipper_stm32f401xc_3A0041000151343430363533-if00
+usb-Klipper_rp2040_5054316568A22XXX-if00               usb-Klipper_stm32f401xc_3A0041XXXXXXXXXXXXX-if00
 ```
 
 We will need to use the serial interface of the Pi you can identify by the `rp2024`.
@@ -72,7 +72,7 @@ We will need to use the serial interface of the Pi you can identify by the `rp20
 Now add this to your `printer.cfg` and change the serial-id to your RPi:
 ```TOML
 [mcu pico]
-serial: /dev/serial/by-id/usb-Klipper_rp2040_5054316568A22D1C-if00
+serial: /dev/serial/by-id/usb-Klipper_rp2040_5054316568A22XXX-if00
 is_non_critical: True
 ```
 
